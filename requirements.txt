@@ -2,3 +2,8 @@ discord.py
 discord-ext-voice-recv
 PyNaCl
 python-dotenv
+python-levenshtein
+fuzzywuzzy
+numpy
+webrtcvad
+faster-whisper

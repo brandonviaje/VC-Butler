@@ -20,9 +20,11 @@ It uses **Open Ai's Whisper** for speech-to-text and can move users, disconnect 
 
 ## Usage
 
-1. Install dependencies:  
+1. Create venv & Install dependencies:  
 ```bash
-pip install -r requirements.txt
+python3 -m venv venv            # create venv
+source venv/bin/activate        # activate venv
+pip install -r requirements.txt # install dependencies
 ```
 
 2. Add your Discord token to .env:

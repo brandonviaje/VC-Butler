@@ -8,7 +8,10 @@ It uses **Open Ai's Whisper** for speech-to-text and can move users, disconnect 
 - **Voice Recognition:** Detects when a user is speaking in a voice channel.  
 - **Wake Word:** Responds to "Hey Echo" to start listening for commands.  
 - **Voice Commands:** 
-  - Move users to another voice channel (`"move me to [channel name]"`)  
+  - Move users to another voice channel (`"move me to [channel name]"`)
+  - Move all users in current voice channel to another voice channel (`"move us to [channel name]"`)
+  - Server Deafen/Undeafen (`"silence/listen"`)
+  - Drag users to another call (`"drag [user] to [channel name]"`)
   - Disconnect from voice channel (`"disconnect"` or `"leave"`) 
 - **Automatic Cleanup:** Clear audio buffers when users leave a channel to prevent memory leaks/inconsistent state.  
 

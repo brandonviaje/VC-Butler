@@ -209,6 +209,27 @@ class Bot(commands.Bot):
                     else:
                         print(f"Could not find user '{target_person_name}'")
 
+        elif "move" in full_text and "us" in full_text:
+            # check if user is in a channel
+            if not user.voice or not user.voice.channel:
+                print(f"{user.name} tried to move group but is not in the channel")
+
+            # parse channel name
+            match = re.search(r"to\s(.+)",full_text)  
+
+            if match:
+                target_channel_name = match.group(1).strip()
+                source_channel = user.voice.channel
+                members_to_move = source_channel.members
+
+                print(f"Moving {len(members_to_move)-1} people to {target_channel_name}.")
+
+                # iterate through each member in the voice channel
+                for member in members_to_move:
+                    # move each member to the target channel add delay to prevent discord flagging bot as spam
+                    await self.move_user(member, target_channel_name)
+                    await asyncio.sleep(0.2)
+
     """
     Finds the closest matching channel name using fuzzy matching and moves the user.
     """
